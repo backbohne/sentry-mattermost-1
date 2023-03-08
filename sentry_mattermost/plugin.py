@@ -75,10 +75,10 @@ class Mattermost(CorePluginMixin, notify.NotificationPlugin):
                 tags.append("`{}` ".format(tag_value))
 
         data = {
-            "title": group.message_short.encode('utf-8'),
+            "title": group.message_short,
             "link": group.get_absolute_url(),
             "id": event.event_id,
-            "culprit": group.culprit.encode('utf-8'),
+            "culprit": group.culprit,
             "env": event.get_environment().name,
             "project_slug": group.project.slug,
             "project_name": group.project.name,
