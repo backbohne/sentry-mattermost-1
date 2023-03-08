@@ -70,9 +70,9 @@ class Mattermost(CorePluginMixin, notify.NotificationPlugin):
             if excluded_tags and (key in excluded_tags or std_key in excluded_tags):
                 continue
             if self.get_option("include_keys_with_tags", project) :
-                tags.append("`{}: {}` ".format(tag_key.encode('utf-8'), tag_value.encode('utf-8')))
+                tags.append("`{}: {}` ".format(tag_key, tag_value))
             else:
-                tags.append("`{}` ".format(tag_value.encode('utf-8')))
+                tags.append("`{}` ".format(tag_value))
 
         data = {
             "title": group.message_short.encode('utf-8'),
